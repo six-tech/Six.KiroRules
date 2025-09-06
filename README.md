@@ -1,4 +1,4 @@
-![Six Kiro Rules](assets/six-kiro-rules-banner-wide-1980-01.png)
+![Six Kiro Rules](.kiro/six-kiro-rules-banner-wide-1980-01.png)
 
 # Six Cursor Rules
 
