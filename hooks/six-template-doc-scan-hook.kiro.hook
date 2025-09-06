@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "name": "C# Documentation Scanner",
+  "description": "When working with C# files, automatically scan documentation for relevant knowledge related to the user's prompt or task to provide additional context for better task execution",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "*.cs"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "A user prompt has been sent regarding a C# file. Before proceeding with the task, scan the available documentation (*.md or *.mdx files) in the #[[file:docs/src/content/docs/]] directory and any other relevant documentation to find knowledge related to the user's prompt or task. If you find relevant documentation, incorporate it as additional context to enhance your understanding and execution of the task. Pay special attention to C# coding standards, patterns, and best practices documented in the project."
+  }
+}

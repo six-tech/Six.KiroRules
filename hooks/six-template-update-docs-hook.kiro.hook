@@ -1,0 +1,25 @@
+{
+  "enabled": true,
+  "name": "In-Repository Documentation Updater",
+  "description": "Automatically updates documentation files when source code, configuration files, or other project files are modified to keep documentation in sync with the codebase",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "**/*.cs",
+      "**/*.json",
+      "**/*.yaml",
+      "**/*.yml",
+      "**/*.xml",
+      "**/*.xaml",
+      "**/*.axaml",
+      "**/*.sln",
+      "**/*.slnx",
+      "**/*.csproj"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Files have been modified in the repository. Use the steering rules specified for documentation writing in #[[file:.kiro/steering/dotnet/general/dotnet-docs.md]], please review the changes and update any relevant documentation files in #[[file:docs/src/content/docs/]], code comments, etc.) to ensure they accurately reflect the current state of the codebase. Focus on updating documentation that may be affected by the file changes, including installation instructions, usage examples, API references, configuration guides, and any other user-facing documentation."
+  }
+}
