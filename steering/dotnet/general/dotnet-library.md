@@ -1,12 +1,13 @@
 ---
 description: This document provides comprehensive guidance for publishing high-quality NuGet packages that follow industry best practices.
-fileMatchPattern: "libs/Directory.Build.props", "libs/Directory.Build.targets", "libs/*.props", "libs/*.targets", "libs/*.csproj", "libs/*.fsproj", "libs/*/README.md", "libs/*/project_icon.png"
+fileMatchPattern: "libs/Directory.Build.props", "libs/Directory.Build.targets", "libs/*.csproj", "libs/*.fsproj", "libs/*/README.md", "libs/*/project_icon.png"
 inclusion: fileMatch
 ---
 
 # Kiro Steering File: Creating and Maintaining .NET library projects
 
 **Role Definition:**
+
 - .NET Solution Architect
 - Build System Expert
 - Package Management Specialist
@@ -14,6 +15,7 @@ inclusion: fileMatch
 ## General
 
 ### Description
+
 This document provides comprehensive guidance for creating and maintaining high-quality c# library projects (.csproj with `library` type) that follow industry best practices.
 
 The c# projects of `library` type are all automatically prepared for NuGet packaging by providing all necessary metadata that packaging needs, that follow industry best practices.
@@ -154,7 +156,7 @@ Always use SPDX license expressions instead of deprecated license URLs or embedd
 
 ### Directory.Build.props for Common Metadata
 
-Use library #[[file:Directory.Build.props]] file in #[[file:libs/Directory.Build.props]] for common metadata shared across multiple 
+Use library #[[file:Directory.Build.props]] file in #[[file:libs/Directory.Build.props]] for common metadata shared across multiple
 libraries in a solution.
 
 #### ✅ DO: Place common metadata in library Directory.Build.props (in #[[file:Directory.Build.props]])

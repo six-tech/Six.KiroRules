@@ -127,9 +127,9 @@ Full documentation: [Six.SolutionTemplate](https://six-tech.github.io/Six.Soluti
 
 ### File Responsibilities
 
-#### Master Directory.Build.props in the Solution Root Directory
+#### Master Directory.Build.props - #[[file:Directory.Build.props]]
 
-- This is a **MASTER** `Directory.Build.props` file from which all other `Directory.Build.props` files inherit.
+- This is a **MASTER** #[[file:Directory.Build.props]] file from which all other `Directory.Build.props` files inherit.
 - Common build properties for all projects in the solution
 - Stylecop configuration
 - TreatWarningsAsErrors configuration
@@ -167,9 +167,9 @@ Example:
 </Project>
 ```
 
-#### Directory.Build.props in apps/ Directory
+#### Directory.Build.props - #[[file:apps/Directory.Build.props]]
 
-- Inherits from the master Directory.Build.props in solution root
+- Inherits from the master - #[[file:Directory.Build.props]] in solution root
 - Configures properties specific to application projects
 - Sets up application-specific package references and configurations
 - Defines output type and other application-related settings
@@ -205,9 +205,9 @@ Example:
 </Project>
 ```
 
-#### Directory.Build.props in libs/ Directory
+#### Directory.Build.props - #[[file:libs/Directory.Build.props]]
 
-- Inherits from the master Directory.Build.props in solution root
+- Inherits from the master #[[file:Directory.Build.props]] in solution root
 - Configures properties specific to library projects that can be packed as NuGet packages
 - Sets up packaging metadata and library-specific configurations
 - Defines common dependencies for libraries
@@ -250,9 +250,9 @@ Example:
 </Project>
 ```
 
-#### Directory.Build.props in tests/ Directory
+#### Directory.Build.props - #[[file:tests/Directory.Build.props]]
 
-- Inherits from the master Directory.Build.props in solution root
+- Inherits from the master #[[file:Directory.Build.props]] in solution root
 - Configures properties specific to test projects
 - Sets up testing frameworks and test-specific configurations
 - Defines common test dependencies
@@ -298,9 +298,9 @@ Example:
 </Project>
 ```
 
-#### Directory.Build.props in benchmarks/ Directory
+#### Directory.Build.props in - #[[file:benchmarks/Directory.Build.props]]
 
-- Inherits from the master Directory.Build.props in solution root
+- Inherits from the master #[[file:Directory.Build.props]] in solution root
 - Configures properties specific to benchmark projects
 - Sets up BenchmarkDotNet and performance testing configurations
 - Defines benchmark-specific optimizations
@@ -343,7 +343,7 @@ Example:
 
 ### global.json Configuration
 
-Maintain a `global.json` file in the solution root to ensure consistent builds across all environments:
+Maintain a #[[file:global.json]] file in the solution root to ensure consistent builds across all environments:
 
 > [!IMPORTANT]
 >
@@ -401,7 +401,7 @@ git commit -m "chore: update .NET SDK to 10.0.100-preview.8
 
 ### Master Directory.Build.props Strategy
 
-The **master Directory.Build.props** serves as the foundation for all build configurations across your solution. It should contain properties that apply to **all** projects regardless of type (applications, libraries, tests, benchmarks).
+The master #[[file:Directory.Build.props]] serves as the foundation for all build configurations across your solution. It should contain properties that apply to **all** projects regardless of type (applications, libraries, tests, benchmarks).
 
 > [!TIP]
 >
@@ -409,7 +409,7 @@ The **master Directory.Build.props** serves as the foundation for all build conf
 >
 > Each level can override or extend properties from the previous level.
 
-### Essential Properties for Master Directory.Build.props
+### Essential Properties for Master `Directory.Build.props`
 
 ```xml
 <Project>
@@ -490,10 +490,12 @@ The **master Directory.Build.props** serves as the foundation for all build conf
 5. **Override Capability**: Design for easy overrides in subdirectories
 6. **Performance**: Consider build performance impact of global analyzers and tools
 
-## Package Management with nuget.config
 
-- Configure and maintain `nuget.config`:
-- **DO NOT DELETE** comments from `nuget.config`. They are used to document the configuration.
+
+## Package Management with #[[file:nuget.config]]
+
+- Configure and maintain #[[file:nuget.config]]:
+- **DO NOT DELETE** comments from #[[file:nuget.config]]. They are used to document the configuration.
 - Use environment variables for security
 - Support multiple package sources for different environments
 - Clear default sources to ensure only configured sources are used

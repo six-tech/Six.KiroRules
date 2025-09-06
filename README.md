@@ -1,8 +1,8 @@
 ![Six Kiro Rules](.kiro/six-kiro-rules-banner-wide-1980-01.png)
 
-# Six Cursor Rules
+# Six Kiro Rules
 
-A comprehensive collection of Cursor AI assistant rules designed to enhance software development quality, consistency,
+A comprehensive collection of Kiro AI assistant rules designed to enhance software development quality, consistency,
 and productivity across multiple technology stacks. This project provides structured guidelines covering:
 
 - **Technical documentation** - Standards for writing and maintaining project documentation
@@ -12,11 +12,14 @@ and productivity across multiple technology stacks. This project provides struct
 - **Specification-driven development** - Structured approaches to requirements and implementation
 - **General software engineering practices** - Coding standards, testing, benchmarking, dependency management, and package publishing
 
-## What are Cursor Rules?
+## What are Kiro Rules?
 
-Cursor Rules are configuration files (`.md` format) that guide AI assistants in Cursor IDE to follow specific
-development practices, coding standards, and workflow patterns. These rules ensure consistent code quality, proper
-documentation, and adherence to industry best practices across different domains and technologies.
+Kiro Rules are configuration files that guide AI assistants in Kiro IDE to follow specific development practices, coding standards, and workflow patterns. These include:
+
+- **Steering Files** (`.md` format) - Provide contextual guidance and best practices for specific file types or development scenarios
+- **Hook Files** (`.kiro.hook` format) - Automate AI assistant actions based on file changes or user interactions
+
+These rules ensure consistent code quality, proper documentation, and adherence to industry best practices across different domains and technologies.
 
 ## Installation
 
@@ -24,20 +27,19 @@ documentation, and adherence to industry best practices across different domains
 To use these Kiro Steering rules in your project:
 
 1. **Copy the steering rules** - Copy the desired `*.md` rule files from this repository to your project's `.
-kiro/steering/`
-   directory
+kiro/steering/` directory
 2. **Create the directory** - If the `.kiro/steering/` directory doesn't exist, create it in your solution root
-3. **Restart Kiro** - Kiro Cursor IDE to ensure the new rules are loaded
+3. **Restart Kiro** - Restart Kiro IDE to ensure the new rules are loaded
 4. **Verify activation** - The AI assistant will automatically apply these rules when working on your project
 
 ### Hook Files
 To use these Kiro Hooks in your project:
 
-1. **Copy the hooks** - Copy the desired `*.kiro.hook` rule files from this repository to your project's `.kiro/hooks/`
+1. **Copy the hooks** - Copy the desired `*.kiro.hook` files from this repository to your project's `.kiro/hooks/`
    directory
 2. **Create the directory** - If the `.kiro/hooks/` directory doesn't exist, create it in your solution root
-3. **Restart Kiro** - Kiro Cursor IDE to ensure the new rules are loaded
-4. **Verify activation** - The AI assistant will automatically apply these rules when working on your project
+3. **Restart Kiro** - Restart Kiro IDE to ensure the new rules are loaded
+4. **Verify activation** - The hooks will automatically trigger based on their configured conditions
 
 
 ## Available Steering Rules
@@ -45,8 +47,6 @@ To use these Kiro Hooks in your project:
 ### .NET Development
 
 #### 🔧 **General .NET**
-##### [Solution Management](steering/dotnet/general/dotnet-solution.md)
-Comprehensive guidelines for maintaining .NET solutions with consistent SDK versions, shared metadata, and secure package sources. Ensures cross-project consistency, maintainability, and security using Six.SolutionTemplate as the foundation.
 
 ##### [Library Development](steering/dotnet/general/dotnet-library.md)
 Best practices for creating high-quality .NET libraries with proper metadata, SourceLink integration, and NuGet publishing. Focuses on package discoverability, documentation, and following NuGet conventions for maximum ecosystem compatibility.
@@ -124,6 +124,14 @@ Guidelines for documenting AI agents and their capabilities within development p
 
 ## Available Hooks
 
+### 📚 **Documentation & Code Quality**
+
+#### [C# Documentation Scanner](hooks/six-template-doc-scan-hook.kiro.hook)
+Automatically scans project documentation when working with C# files to provide relevant context and knowledge for better task execution. Triggers when C# files are edited and searches for related documentation in the project to enhance AI assistant responses.
+
+#### [In-Repository Documentation Updater](hooks/six-template-update-docs-hook.kiro.hook)
+Automatically updates documentation files when source code, configuration files, or other project files are modified. Ensures documentation stays in sync with codebase changes by reviewing modifications and updating relevant documentation files, code comments, and user-facing guides.
+
 
 
 
@@ -132,7 +140,7 @@ Guidelines for documenting AI agents and their capabilities within development p
 
 ### What is `.meta.md`?
 
-`.meta.md` represents the **meta-framework** and **standardized structure** used to create consistent, high-quality Cursor rules across the Six Cursor Rules collection. 
+`.meta.md` represents the **meta-framework** and **standardized structure** used to create consistent, high-quality Kiro rules across the Six Kiro Rules collection. 
 
 It's not a single file, but rather a **methodology and template** that ensures all rules follow the same proven structure for optimal AI assistant guidance.
 
@@ -149,13 +157,13 @@ The `.meta.md` methodology provides several key benefits:
 ### How to Write New Rules Using `.meta.md`
 
 #### 1. **Front Matter Structure**
-Every rule starts with standardized front matter:
+Every steering rule starts with standardized front matter:
 
 ```yaml
 ---
 description: Brief description of what this rule covers
-globs: file-patterns-where-rule-applies.md,*.cs,*.ts
-alwaysApply: false  # Set to true for universal rules
+fileMatchPattern: "*.cs", "*.ts", "*.md"  # File patterns where rule applies
+inclusion: fileMatch  # Options: always, fileMatch, manual
 ---
 ```
 
@@ -240,8 +248,8 @@ steering/
 - **Cross-References**: Link to related rules when relevant
 
 #### **Technical Requirements**
-- **File Extensions**: Use `.md` for Cursor rule files
-- **Glob Patterns**: Define specific file patterns for rule activation
+- **File Extensions**: Use `.md` for Kiro steering files, `.kiro.hook` for hook files
+- **File Match Patterns**: Define specific file patterns for rule activation using `fileMatchPattern`
 - **Security First**: Include security considerations in requirements
 - **Testing Focus**: Emphasize testing and validation practices
 
@@ -255,8 +263,8 @@ steering/
 ```markdown
 ---
 description: Guidelines for [specific technology/practice]
-globs: *.extension, path/patterns/**
-alwaysApply: false
+fileMatchPattern: "*.extension", "path/patterns/**"
+inclusion: fileMatch
 ---
 
 # Kiro Steering File: [Technology/Practice] Best Practices
@@ -299,7 +307,76 @@ Before finalizing a new rule, ensure it includes:
 - [ ] Testing guidance
 - [ ] Proper file organization
 
-This `.meta.md` approach ensures that all Six Cursor Rules maintain high quality, consistency, and effectiveness in guiding AI-assisted development across the entire technology stack.
+This `.meta.md` approach ensures that all Six Kiro Rules maintain high quality, consistency, and effectiveness in guiding AI-assisted development across the entire technology stack.
+
+## Writing New Hooks
+
+### Hook Structure
+
+Kiro hooks are JSON configuration files with `.kiro.hook` extension that define automated AI assistant actions. Each hook consists of:
+
+#### Basic Hook Template
+
+```json
+{
+  "enabled": true,
+  "name": "Hook Display Name",
+  "description": "Brief description of what this hook does",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "*.cs",
+      "*.ts"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Instructions for the AI assistant when this hook triggers"
+  }
+}
+```
+
+#### Hook Trigger Types
+
+**File-based Triggers:**
+- `fileEdited` - Triggers when specified file patterns are modified
+- `fileSaved` - Triggers when files are saved
+- `fileCreated` - Triggers when new files are created
+
+**Manual Triggers:**
+- `manual` - Creates a button in the UI for manual execution
+
+#### Hook Actions
+
+**AI Assistant Actions:**
+- `askAgent` - Sends a prompt to the AI assistant with specific instructions
+- `runCommand` - Executes shell commands or scripts
+
+#### Best Practices for Hook Creation
+
+1. **Clear Naming**: Use descriptive names that explain the hook's purpose
+2. **Specific Patterns**: Target specific file types to avoid unnecessary triggers
+3. **Contextual Prompts**: Include relevant file references using `#[[file:path]]` syntax
+4. **Performance**: Consider the frequency of triggers to avoid overwhelming the system
+5. **Documentation**: Always include clear descriptions of what the hook accomplishes
+
+#### Example Hook Categories
+
+**Documentation Hooks:**
+- Auto-update README files when code changes
+- Sync API documentation with code modifications
+- Generate changelog entries from commit messages
+
+**Code Quality Hooks:**
+- Run tests when source files change
+- Update code comments when interfaces change
+- Validate coding standards on file save
+
+**Project Management Hooks:**
+- Update project metadata when dependencies change
+- Sync version numbers across project files
+- Generate release notes from version changes
 
 ## Special Thanks
 
@@ -309,7 +386,7 @@ This `.meta.md` approach ensures that all Six Cursor Rules maintain high quality
 
 ## Related Resources
 
-- [Cursor IDE Documentation](https://cursor.sh/docs)
+- [Kiro IDE Documentation](https://kiro.dev/docs)
 - [C# Coding Standards](https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions)
 - [NuGet Package Publishing](https://docs.microsoft.com/en-us/nuget/create-packages/overview-and-workflow)
 - [Semantic Versioning](https://semver.org/)
