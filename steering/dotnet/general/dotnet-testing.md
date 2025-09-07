@@ -7,6 +7,7 @@ inclusion: fileMatch
 # Kiro Steering File: Best Practices for .NET Testing
 
 **Role Definition:**
+
 - Test Engineer
 - Quality Assurance Specialist
 - CI/CD Expert
@@ -34,7 +35,8 @@ with proper isolation and clear patterns for test organization and execution.
 ### Unit Test Project Configuration
 
 Configure test projects with the detailed coverlet configuration:
-```xml
+
+````xml
 <Project Sdk="Microsoft.NET.Sdk">
 <PropertyGroup>
 <TargetFramework>net9.0</TargetFramework>
@@ -60,7 +62,7 @@ Configure test projects with the detailed coverlet configuration:
           <ThresholdStat>total</ThresholdStat>
           <Threshold>80</Threshold>
         </PropertyGroup>
-        
+
         <ItemGroup>
           <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.10.0" />
           <PackageReference Include="xunit" Version="2.9.3" />
@@ -117,8 +119,7 @@ For integration tests with services/databases, add .NET Aspire hosting:
         </PackageReference>
     </ItemGroup>
 </Project>
-```
-
+````
 
 ## Test Structure and Organization
 
@@ -178,7 +179,6 @@ public class OrderTests : IClassFixture<DatabaseFixture>
     }
 }
 ```
-
 
 ## Test Patterns and Best Practices
 
@@ -323,7 +323,6 @@ public class IntegrationTests : IAsyncDisposable
 }
 ```
 
-
 ## CI/CD Integration
 
 ### GitHub Actions Workflow
@@ -360,7 +359,6 @@ Enable code coverage:
     <Threshold>80</Threshold>
 </PropertyGroup>
 ```
-
 
 ## Integration Testing with .NET Aspire
 
@@ -499,16 +497,15 @@ public class KeycloakCollection : ICollectionFixture<KeycloakTestFixture>
 ```
 
 > [!NOTE]
-> 
+>
 > **Benefits of .NET Aspire for Testing:**
-> 
+>
 > - Tremendously simplifies both local and CI/CD testing
 > - Provides consistent container orchestration
 > - Built-in service discovery and health checks
 > - Excellent integration with the .NET ecosystem
 > - Simplified resource management and cleanup
 > - Better development experience with unified tooling
-
 
 ## Best Practices
 
@@ -517,9 +514,9 @@ public class KeycloakCollection : ICollectionFixture<KeycloakTestFixture>
 Never change tests to make them pass when the code output is wrong:
 
 > [!WARNING]
-> 
+>
 > **NEVER modify tests to match incorrect code behavior!**
-> 
+>
 > If your tests are correctly written and the code produces the wrong output, the problem is in the code, not the tests.
 > Tests are the specification - they define the expected behavior. Changing them to match broken code defeats their
 > purpose.
@@ -782,4 +779,4 @@ public void ProcessOrder_CreatesExpectedEvents()
 }
 ```
 
-# End of Kiro Steering File 
+# End of Kiro Steering File

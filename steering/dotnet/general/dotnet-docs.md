@@ -32,8 +32,8 @@ When asked to generate technical documentation for a functionality or a feature,
 - Maintain a #[[file:docs/astro.config]] for repository documentation website (uses Astro.js with Starlight for documentation)
 - Maintain (write new and update existing documentation pages) in #[[file:docs/src/content/docs/]] directory
 - Prefer `.mdx` format if custom components are needed (if Markdown is not enough). Otherwise, use standard `.md` format.
-- Use astro.js steering rules for writing documentation pages and organization from #[[file:.kiro/steering/web/astro-coding-style.md]]
-- Use typecript steering rules for writing documentation pages and organization from #[[file:.kiro/steering/web/typescript-coding-style.md]]
+- If writing docs related to Astro.js, use astro.js steering rules for writing documentation pages and organization from #[[file:.kiro/steering/web/astro-coding-style.md]]
+- If writing docs related to Typecript, se typecript steering rules for writing documentation pages and organization from #[[file:.kiro/steering/web/typescript-coding-style.md]]
 
 
 ## Solution Structure

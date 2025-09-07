@@ -3,7 +3,9 @@
 # Six Kiro Rules
 
 A comprehensive collection of Kiro AI assistant rules designed to enhance software development quality, consistency,
-and productivity across multiple technology stacks. This project provides structured guidelines covering:
+and productivity across multiple technology stacks. 
+
+This project provides structured guidelines covering:
 
 - **Technical documentation** - Standards for writing and maintaining project documentation
 - **.NET ecosystem** - ASP.NET, Avalonia, Blazor, CI/CD, and related technologies
@@ -86,6 +88,12 @@ Best practices for developing distributed applications using Microsoft Orleans f
 #### 🎨 **UI & Desktop Development**
 ##### [Avalonia MVVM](steering/dotnet/avalonia/avalonia-mvvm.md)
 Comprehensive guidelines for building cross-platform desktop applications using Avalonia UI with MVVM architecture. Covers reactive programming with ReactiveUI, XAML best practices, and cross-platform compatibility for Windows, macOS, and Linux.
+
+##### [Avalonia Controls](steering/dotnet/avalonia/avalonia-controls.md)
+Guidelines for creating Avalonia controls using pure C# code without XAML, with separate styling similar to the JS/CSS paradigm. Focuses on clean separation of concerns, maintainable control architecture, and modern UI development patterns.
+
+##### [Avalonia XAML](steering/dotnet/avalonia/avalonia-xaml.md)
+Best practices for writing clean, maintainable Avalonia XAML with modern UI patterns, data binding, styling, and performance optimization. Covers XAML structure, resource management, and efficient UI composition techniques.
 
 ##### [Blazor Development](steering/dotnet/blazor/blazor-coding-style.md)
 Best practices for building modern web applications with Blazor, covering component architecture, data binding, performance optimization, and integration with ASP.NET Core APIs for full-stack development.

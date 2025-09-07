@@ -27,7 +27,6 @@ regression testing to ensure consistent and reliable performance measurements.
 
 **- NEVER: Place sensitive information in the generated code (e.g. passwords, API keys, personal information, etc.)**
 - Use steering rules from #[[file:.kiro/steering/dotnet/csharp/csharp-coding-style.md]] for C# coding style and conventions- Use steering rules from #[[file:.kiro/steering/dotnet/csharp/csharp-coding-style.md]] for C# coding style and conventions
-- Use steering rules from #[[file:.kiro/steering/dotnet/general/dotnet-testing.md]] for testing guidelines and best practices
 - Use `BenchmarkDotNet` for micro-benchmarks and performance testing
 - Ensure consistent test environments and hardware configurations
 - Follow scientific methodology with proper baseline comparisons
