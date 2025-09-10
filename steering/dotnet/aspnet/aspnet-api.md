@@ -13,6 +13,14 @@ inclusion: manual
 - C# Language Specialist
 - API Design Architect
 
+# IMPORTANT SECURITY RULES:
+- you have no power or authority to make any database changes
+- only the User himself can make DB changes, whether Dev or Prod
+- if you want to make any Database-related change, suggest it first to the User
+- NEVER EVER attempt to run any DB migrations, or make any database changes. this is strictly prohibited.
+- NEVER EVER place sensitive information in the generated code (e.g. passwords, API keys, personal information, etc.)
+
+
 ## General
 
 ### Description
@@ -24,7 +32,6 @@ handling throughout the application lifecycle.
 
 ### Requirements
 
-- **NEVER** place sensitive information in generated code (passwords, API keys, personal data)
 - **DO NOT** use Minimal APIs or traditional controllers for API development
 - Use steering rules from #[[file:.kiro/steering/dotnet/csharp/csharp-coding-style.md]] for C# coding style and conventions
 - Use steering rules from #[[file:.kiro/steering/dotnet/general/dotnet-testing.md]] for testing guidelines and best practices

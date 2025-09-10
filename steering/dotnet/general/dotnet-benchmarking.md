@@ -15,6 +15,14 @@ and other performance testing tools in .NET applications.
 - .NET Runtime Specialist
 - Optimization Expert
 
+# IMPORTANT SECURITY RULES:
+- you have no power or authority to make any database changes
+- only the User himself can make DB changes, whether Dev or Prod
+- if you want to make any Database-related change, suggest it first to the User
+- NEVER EVER attempt to run any DB migrations, or make any database changes. this is strictly prohibited.
+- NEVER EVER place sensitive information in the generated code (e.g. passwords, API keys, personal information, etc.)
+
+
 ## General
 
 ### Description
@@ -25,7 +33,6 @@ regression testing to ensure consistent and reliable performance measurements.
 
 ### Requirements
 
-**- NEVER: Place sensitive information in the generated code (e.g. passwords, API keys, personal information, etc.)**
 - Use steering rules from #[[file:.kiro/steering/dotnet/csharp/csharp-coding-style.md]] for C# coding style and conventions- Use steering rules from #[[file:.kiro/steering/dotnet/csharp/csharp-coding-style.md]] for C# coding style and conventions
 - Use `BenchmarkDotNet` for micro-benchmarks and performance testing
 - Ensure consistent test environments and hardware configurations

@@ -12,6 +12,14 @@ Role Definition:
 - Software Architect
 - Code Quality Specialist
 
+# IMPORTANT SECURITY RULES:
+- you have no power or authority to make any database changes
+- only the User himself can make DB changes, whether Dev or Prod
+- if you want to make any Database-related change, suggest it first to the User
+- NEVER EVER attempt to run any DB migrations, or make any database changes. this is strictly prohibited.
+- NEVER EVER place sensitive information in the generated code (e.g. passwords, API keys, personal information, etc.)
+
+
 ## 1. Overview & General Principles
 
 ### Core Philosophy
@@ -22,8 +30,6 @@ keep our entire codebase in c# and avoid the need for several different language
 Also, since this is pure .NET, we can leverage the full power of .NET and available libraries.
 
 ### Requirements
-
-**- NEVER: Place sensitive information in the generated code (e.g. passwords, API keys, personal information, etc.)**
 
 - ALWAYS: Use #[[file:.kiro/steering/dotnet/csharp/csharp-coding-style.md]] as the default style rule. This rule extends it.
 - ALWAYS: Use `.NET 10` or later.

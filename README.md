@@ -51,52 +51,54 @@ To use these Kiro Hooks in your project:
 #### 🔧 **General .NET**
 
 ##### [Library Development](steering/dotnet/general/dotnet-library.md)
-Best practices for creating high-quality .NET libraries with proper metadata, SourceLink integration, and NuGet publishing. Focuses on package discoverability, documentation, and following NuGet conventions for maximum ecosystem compatibility.
+Steering rules for creating high-quality .NET libraries with proper metadata, SourceLink integration, and NuGet publishing. Focuses on package discoverability, documentation, and following NuGet conventions for maximum ecosystem compatibility.
 
 ##### [Dependency Management](steering/dotnet/general/dotnet-dependency-management.md)
-Guidelines for managing NuGet dependencies with security focus, version control, and migration strategies. Addresses package vulnerabilities, license compliance, and maintaining healthy dependency graphs across .NET projects.
+Steering rules for managing NuGet dependencies with security focus, version control, and migration strategies. Addresses package vulnerabilities, license compliance, and maintaining healthy dependency graphs across .NET projects.
 
 ##### [Testing Best Practices](steering/dotnet/general/dotnet-testing.md)
-Comprehensive testing strategies including unit, integration, and performance testing with xUnit, BenchmarkDotNet, and Coverlet. Emphasizes test isolation, Arrange-Act-Assert patterns, and automated testing workflows.
+Steering rules for testing strategies including unit, integration, and performance testing with xUnit, BenchmarkDotNet,
+and Coverlet. Emphasizes test isolation, Arrange-Act-Assert patterns, and automated testing workflows.
 
 ##### [Benchmarking Guidelines](steering/dotnet/general/dotnet-benchmarking.md)
-Performance benchmarking best practices using BenchmarkDotNet for measuring and optimizing .NET code performance. Covers memory analysis, async performance testing, and CI/CD integration for continuous performance monitoring.
+Steering rules for performance benchmarking best practices using BenchmarkDotNet for measuring and optimizing .NET code 
+performance. Covers memory analysis, async performance testing, and CI/CD integration for continuous performance monitoring.
 
 ##### [Documentation Standards](steering/dotnet/general/dotnet-docs.md)
-Standards for writing technical documentation in `docs/steering/content/docs/` with proper structure and formatting. Ensures consistent documentation quality and discoverability across .NET projects.
+Steering rules writing technical documentation in `docs/steering/content/docs/` with proper structure and formatting. Ensures consistent documentation quality and discoverability across .NET projects.
 
 
 #### 💻 **C#**
 ##### [C# Coding Style](steering/dotnet/csharp/csharp-coding-style.md)
-Guidelines for writing clean, maintainable, and idiomatic C# code with functional patterns and modern language features. Emphasizes readability, proper abstractions, and leveraging C# 13+ features for optimal code quality.
+Steering rules writing clean, maintainable, and idiomatic C# code with functional patterns and modern language features. Emphasizes readability, proper abstractions, and leveraging C# 13+ features for optimal code quality.
 
 ##### [C# Scripting](steering/dotnet/csharp/csharp-scripting-style.md)
-Best practices for C# scripting with .NET, including single-file applications, package directives, and rich console output. Covers Spectre.Console for CLI applications and CliWrap for external process management.
+Steering rules for C# scripting with .NET, including single-file applications, package directives, and rich console output. Covers Spectre.Console for CLI applications and CliWrap for external process management.
 
 
 
 #### 🏗️ **ASP.NET Core Development**
 ##### [ASP.NET Core API](steering/dotnet/aspnet/aspnet-api.md)
-Best practices for building secure, scalable ASP.NET Core APIs using Minimal APIs and modern patterns. Covers dependency injection, error handling, security, performance optimization, and comprehensive API documentation.
+Steering rules for building secure, scalable ASP.NET Core APIs using Minimal APIs and modern patterns. Covers dependency injection, error handling, security, performance optimization, and comprehensive API documentation.
 
 ##### [Fast Endpoints API](steering/dotnet/aspnet/aspnet-api-fast-endpoints.md)
-Guidelines for building high-performance ASP.NET Core APIs using Fast Endpoints framework. Focuses on endpoint architecture, validation, security, performance optimization, and comprehensive testing strategies.
+Steering rules for building high-performance ASP.NET Core APIs using Fast Endpoints framework. Focuses on endpoint architecture, validation, security, performance optimization, and comprehensive testing strategies.
 
 ##### [Orleans Development](steering/dotnet/aspnet/aspnet-orleans.md)
-Best practices for developing distributed applications using Microsoft Orleans framework. Covers grain development, clustering, persistence, and integration with .NET Aspire for local orchestration.
+Steering rules for developing distributed applications using Microsoft Orleans framework. Covers grain development, clustering, persistence, and integration with .NET Aspire for local orchestration.
 
 #### 🎨 **UI & Desktop Development**
 ##### [Avalonia MVVM](steering/dotnet/avalonia/avalonia-mvvm.md)
-Comprehensive guidelines for building cross-platform desktop applications using Avalonia UI with MVVM architecture. Covers reactive programming with ReactiveUI, XAML best practices, and cross-platform compatibility for Windows, macOS, and Linux.
+Steering rules for building cross-platform desktop applications using Avalonia UI with MVVM architecture. Covers reactive programming with ReactiveUI, XAML best practices, and cross-platform compatibility for Windows, macOS, and Linux.
 
 ##### [Avalonia Controls](steering/dotnet/avalonia/avalonia-controls.md)
-Guidelines for creating Avalonia controls using pure C# code without XAML, with separate styling similar to the JS/CSS paradigm. Focuses on clean separation of concerns, maintainable control architecture, and modern UI development patterns.
+Steering rules for creating Avalonia controls using pure C# code without XAML, with separate styling similar to the JS/CSS paradigm. Focuses on clean separation of concerns, maintainable control architecture, and modern UI development patterns.
 
 ##### [Avalonia XAML](steering/dotnet/avalonia/avalonia-xaml.md)
-Best practices for writing clean, maintainable Avalonia XAML with modern UI patterns, data binding, styling, and performance optimization. Covers XAML structure, resource management, and efficient UI composition techniques.
+Steering rules for writing clean, maintainable Avalonia XAML with modern UI patterns, data binding, styling, and performance optimization. Covers XAML structure, resource management, and efficient UI composition techniques.
 
 ##### [Blazor Development](steering/dotnet/blazor/blazor-coding-style.md)
-Best practices for building modern web applications with Blazor, covering component architecture, data binding, performance optimization, and integration with ASP.NET Core APIs for full-stack development.
+Steering rules for building modern web applications with Blazor, covering component architecture, data binding, performance optimization, and integration with ASP.NET Core APIs for full-stack development.
 
 
 
@@ -109,25 +111,30 @@ Comprehensive best practices for .NET build systems, CI/CD pipelines, and automa
 Security practices for .NET code signing with SignClient integration in CI/CD pipelines. Ensures authenticity, integrity, and compliance through automated signing workflows and certificate management.
 
 ##### [NuGet Publishing](steering/dotnet/ci-cd/dotnet-gh-workflow-nuget-publishing.md)
-Best practices for publishing high-quality NuGet packages with proper versioning, metadata, and distribution. Covers semantic versioning, package validation, security, and automated publishing workflows.
+Steering rules for publishing high-quality NuGet packages with proper versioning, metadata, and distribution. Covers semantic versioning, package validation, security, and automated publishing workflows.
 
 
 
 ### 🌐 **Web Technologies**
 #### [TypeScript Development](steering/web/typescript/typescript-coding-style.md)
-Guidelines for writing type-safe, maintainable TypeScript code with modern JavaScript features and functional patterns. Focuses on proper typing, performance optimization, and scalable architecture for web applications.
+Steering rules for writing type-safe, maintainable TypeScript code with modern JavaScript features and functional patterns. Focuses on proper typing, performance optimization, and scalable architecture for web applications.
 
 #### [Astro Framework](steering/web/astro/astro-coding-style.md)
-Best practices for building fast, content-focused websites using Astro framework. Covers component development, performance optimization, and integration with modern web technologies for optimal user experience.
+Steering rules for building fast, content-focused websites using Astro framework. Covers component development, performance optimization, and integration with modern web technologies for optimal user experience.
 
 
 
 ### 📋 **Technical Documentation**
+
+#### [Tech Writer](steering/documentation/tech-writer.md)
+Steering rules for writing comprehensive technical content for other developers.
+
 #### [README Documentation](steering/documentation/readme-md.md)
-Standards for writing comprehensive README files with proper structure, formatting, and content organization. Ensures consistent documentation quality across all projects and repositories.
+Steering rules for writing comprehensive README files with proper structure, formatting, and content organization. 
+Ensures consistent documentation quality across all projects and repositories.
 
 #### [AI Agents Documentation](steering/documentation/agents-md.md)
-Guidelines for documenting AI agents and their capabilities within development projects. Ensures clear communication of AI-assisted workflows and automated processes.
+Steering rules for documenting AI agents and their capabilities within development projects. Ensures clear communication of AI-assisted workflows and automated processes.
 
 
 ## Available Hooks
