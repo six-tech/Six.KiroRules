@@ -68,4 +68,142 @@ Your task is to produce clear, in-depth tutorials that provide practical, implem
 - Max 4 sentences and 2 paragraphs (if appropriate)
 
 
+# Documentation Best Practices and Examples
+
+## Page Structure and Organization
+
+
+### ✅ DO: First H1 heading should be 'Introduction' or 'Overview' or similar
+```
+# Introduction
+Content for introduction to the chapter
+```
+
+### ❌ DON'T: Never the name of the page or something else for first H1 heading
+
+If page name is: 'My Special Class', DO NOT use it for first H1 heading like this:
+
+```
+# My Special Class
+```
+
+----
+
+
+
+### ✅ DO: Write normal headings when describing properties, methods, and similar
+
+```
+## This is some method name
+```
+
+### ❌ DON'T: Never use `` in headings
+
+```
+## This is some `method name`
+```
+
+----
+
+### ✅ DO: H1 MUST be used for all top-level headings
+All top level headings should be H1:
+
+```markdown
+
+# Overview
+This guide covers implementing secure API authentication using JWT tokens.
+
+# Basic Setup
+Configure your authentication middleware...
+
+# Token Management
+Handle token generation, validation, and refresh...
+
+# Advanced Security
+Implement rate limiting, token rotation, and security headers...
+
+# Integration Examples
+Real-world integration with your API endpoints...
+```
+
+### ❌ DON'T: Nest all headings under first H1 heading
+
+```markdown
+# Introduction
+
+## Everything About Our API
+Our API does authentication, user management, data processing, caching, logging, monitoring, 
+deployment, scaling, security, performance optimization, error handling, testing, documentation, support, and more...
+
+## Authentication
+some content
+
+## Security
+some content
+
+## Performance
+some content
+```
+
+
+----
+
+
+### ✅ DO: Use Logical Chapter-Based Organization
+Organize complex features into multiple focused pages that build upon each other:
+
+```markdown
+# API Authentication
+
+# Overview
+This guide covers implementing secure API authentication using JWT tokens.
+
+# Basic Setup
+Configure your authentication middleware...
+
+# Token Management
+Handle token generation, validation, and refresh...
+
+# Advanced Security
+Implement rate limiting, token rotation, and security headers...
+
+# Integration Examples
+Real-world integration with your API endpoints...
+```
+
+### ❌ DON'T: Create Monolithic Single Pages
+Avoid overwhelming readers with everything in one long document:
+
+```markdown
+# Everything About Our API
+
+# Introduction
+Our API does authentication, user management, data processing, caching, logging, monitoring, deployment, scaling, security, performance optimization, error handling, testing, documentation, support, and more...
+
+# Authentication
+[500 lines of mixed content about basic auth, JWT, OAuth, SAML, custom providers...]
+
+# Security
+[300 lines mixing authentication security with data encryption, HTTPS, CORS, CSRF...]
+
+# Performance
+[400 lines covering caching, database optimization, API rate limiting, CDN setup...]
+```
+
+
+## Code Examples
+- DO NOT write code examples unless user specifically asks for them.
+- Provide substantial, real-world code examples that demonstrate complete functionality
+- Explain the code in-depth, discussing why certain approaches are taken
+- Focus on examples that readers can adapt and use in their own projects
+- Clearly indicate where each code snippet should be placed in the project structure
+
+## Conclusions
+- DO NOT summarize unless user specifically asks for them
+- Summarize what has been covered in the tutorial
+- Don't use phrases like "In conclusion" or "To sum up"
+- If appropriate, mention potential challenges or areas for improvement in the implemented solution
+- Keep the conclusion concise and focused on the practical implications of the implementation
+- Max 4 sentences and 2 paragraphs (if appropriate)
+
 # End of Kiro Steering File
